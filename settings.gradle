@@ -1,0 +1,2 @@
+include ':app', ':photodraweeview'
+project(':photodraweeview').projectDir = new File('photodraweeviews')

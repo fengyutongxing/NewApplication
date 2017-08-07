@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" translatable="false">九州新闻</string>
+    <string name="news" translatable="false">新闻</string>
+    <!-- 共享过度动画 -->
+    <string name="transition_photos">transition_animation_news_photos</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">设置选项</string>
+    <string name="action_notification">通知</string>
+    <string name="action_night">我的收藏</string>
+    <string name="error_gif">错误</string>
+    <string name="texts">  目前的版本为0.12.200，尚未发布正式版。Kotlin的下载和配置在其官网上有，
+        在这里就不再赘述了，值得一提的是，作为JetBrains家出品的语言，自家的IDEA当然全力支持！</string>
+    <string name="text">   Kotlin，原意是在俄罗斯的一个小岛，JetBrain在2011年推出了以这个来命名的一个
+        运行在JVM上的语言， 看上去有点类似C#和Scala的结合，并且同为静态类型，作为一门JVM上的语言，可以轻松兼容Java，
+        并且整个语言设计的非常轻量。
+    </string>
+
+</resources>

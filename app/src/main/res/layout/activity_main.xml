@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFF"
+    android:orientation="vertical"
+    tools:context="com.zhang.newapplication.views.activity.MainActivity">
+
+    <com.zhang.newapplication.views.widget.MyViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:isScrollContainer="true">
+    </com.zhang.newapplication.views.widget.MyViewPager>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tabIndicatorColor="@color/tou_ming"
+        android:background="@color/snow"
+        app:tabSelectedTextColor="@android:color/holo_red_dark"
+        app:tabTextColor="@color/night_one_text_color"
+        ></android.support.design.widget.TabLayout>
+
+</LinearLayout>
