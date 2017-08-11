@@ -56,6 +56,9 @@ public class HeadlinesFragment extends BaseFragment<VideoPresenter> implements V
     //标记
     private int tag;
 
+    private View view1;
+    private PopupWindow popupWindow;
+    private WebView mWebView;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_toutiao;
@@ -87,14 +90,12 @@ public class HeadlinesFragment extends BaseFragment<VideoPresenter> implements V
         //滑动监听
         headlinesRrv.addOnScrollListener(new MyRecyclerViewScrollListener(mFab));
         myAdapter = new MyAdapter(mHeadlinesBeeen);
+        view1 = LayoutInflater.from(mActivity).inflate(R.layout.pop_layout,null,true);
         //点击事件
         myAdapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
-
-            private PopupWindow popupWindow;
-            private WebView mWebView;
             @Override
             public void onItemClick(View view, int position) {
-                View view1 =  LayoutInflater.from(mActivity).inflate(R.layout.pop_layout,null,true);
+
                 view1.setFocusable(true); // 这个很重要
                 view1.setFocusableInTouchMode(true);
 
@@ -107,18 +108,19 @@ public class HeadlinesFragment extends BaseFragment<VideoPresenter> implements V
                 //显示PopupWindow
                 View rootview = LayoutInflater.from(mActivity).inflate(R.layout.item_footer, null);
                 popupWindow.showAtLocation(rootview, Gravity.BOTTOM, 0, 0);
-               // 重写onKeyListener
-                view1.setOnKeyListener(new View.OnKeyListener() {
-                    @Override
-                    public boolean onKey(View v, int keyCode, KeyEvent event) {
-                        if (keyCode == KeyEvent.KEYCODE_BACK) {
-                            popupWindow.dismiss();
-                            popupWindow = null;
-                            return true;
-                        }
-                        return false;
-                    }
-                });
+
+            }
+        });
+        // 重写onKeyListener
+        view1.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    popupWindow.dismiss();
+                    popupWindow = null;
+                    return true;
+                }
+                return false;
             }
         });
         headlinesRrv.setAdapter(myAdapter);

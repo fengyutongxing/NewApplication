@@ -37,6 +37,7 @@ public class NewFragment extends BaseFragment<NewPresenter> implements NewView,V
     public static ViewPager viewPager;
     private ImageView imageView,search;//图片
     private Toolbar toolbar;
+    private boolean tag = false;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_new;
@@ -49,19 +50,23 @@ public class NewFragment extends BaseFragment<NewPresenter> implements NewView,V
 
     @Override
     protected void initView(View view) {
-        mTitles.add("头条");
-        mTitles.add("社会");
-        mTitles.add("国内");
-        mTitles.add("国际");
-        mTitles.add("娱乐");
-        mTitles.add("体育");
-        mTitles.add("军事");
-        mTitles.add("科技");
-        mTitles.add("财经");
-        mTitles.add("时尚");
-        for (int i=0;i<mTitles.size();i++){
-            mFragments.add(HeadlinesFragment.newInstance(i));
+        if(!tag){
+            mTitles.add("头条");
+            mTitles.add("社会");
+            mTitles.add("国内");
+            mTitles.add("国际");
+            mTitles.add("娱乐");
+            mTitles.add("体育");
+            mTitles.add("军事");
+            mTitles.add("科技");
+            mTitles.add("财经");
+            mTitles.add("时尚");
+            for (int i=0;i<mTitles.size();i++){
+                mFragments.add(HeadlinesFragment.newInstance(i));
+            }
+            tag = true;
         }
+
         tabLayout = (TabLayout) view.findViewById(R.id.tabs__news);
         viewPager = (ViewPager) view.findViewById(R.id.view_pager_news);
         imageView = (ImageView) view.findViewById(R.id.add_channel_iv);

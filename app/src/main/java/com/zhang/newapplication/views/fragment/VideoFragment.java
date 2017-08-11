@@ -44,6 +44,7 @@ public class VideoFragment extends BaseFragment<VideoPresenter> implements Video
 
     @Override
     public void OnSuccess(MainBean mainBean) {
+        
     }
 
     @Override
